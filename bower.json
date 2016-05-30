@@ -1,11 +1,12 @@
 {
-  "name": "myforce-angularjs-dropdown-multiselect",
-  "version": "1.0.1",
+  "name": "morow93-angularjs-dropdown-multiselect",
+  "version": "1.0.4",
   "authors": [
     "Dotan Simha <dotansimha@gmail.com>",
-    "Pieter Kempenaers <pkempenaers@myforce.be>"
+    "Pieter Kempenaers <pkempenaers@myforce.be>",
+    "Alexander Chepurnoy <derchepur@gmail.com>"
   ],
-  "description": "AngularJS Dropdown Multiselect directive",
+  "description": "AngularJS Dropdown Multiselect directive (with smooth scrollbar)",
   "keywords": [
     "angular",
     "angularjs",
@@ -27,7 +28,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1"
+    "angular": "~1",
+    "angular-smooth-scrollbar": "^6.2.0"
   },
   "devDependencies": {
     "angular": "~1",
