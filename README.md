@@ -35,9 +35,6 @@ This directive gives you a Bootstrap Dropdown with the power of AngularJS direct
 3. Include the file in your app
 	- `<script type="text/javascript" src="angularjs-dropdown-multiselect.js"></script>`.
 	- You can also use the minfined version (`angularjs-dropdown-multiselect.min.js`).
+	- Also don't forget about angular-smooth-scrollbar dependencies
 4. Include the module in angular (i.e. in `app.js`) - `angularjs-dropdown-multiselect`
 
-
-## Usage and Documentation
-See the documentation and examples in the GitHub pages:
-http://myforce.github.io/angularjs-dropdown-multiselect/
