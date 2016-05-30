@@ -17,11 +17,8 @@ This directive gives you a Bootstrap Dropdown with the power of AngularJS direct
 - Select by groups
 - Custom scrollbar
 
-## Demo
-http://myforce.github.io/angularjs-dropdown-multiselect/
-
 ## Dependencies
-- required: AngularJS >= 1.2, Bootstrap >= 3.0
+- required: AngularJS >= 1.2, Bootstrap >= 3.0, angular-smooth-scrollbar >= 6.2.0
 
 - Make sure to add the dependencies before the directive's js file. 
 - Note: Bootstrap JS file is not needed for the directive, it just uses the CSS file
