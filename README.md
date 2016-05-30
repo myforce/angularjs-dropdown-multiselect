@@ -14,6 +14,8 @@ This directive gives you a Bootstrap Dropdown with the power of AngularJS direct
 - Callback events.
 - Translation texts.
 - Scrollable list (useful for big lists)
+- Select by groups
+- Custom scrollbar
 
 ## Demo
 http://myforce.github.io/angularjs-dropdown-multiselect/
