@@ -1,0 +1,27 @@
+.single-select .divider{
+    display: none;
+}
+.dropdown-menu > .scroll-content > li > a{
+	display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857;
+    color: #333333;
+    white-space: nowrap;
+}
+.dropdown-menu > .scroll-content > li > a > .glyphicon{
+    padding-right: 5px;
+}
+.dropdown-menu > .scroll-content > li > a:hover, .dropdown-menu > li > a:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #1C7EBB;
+}
+.scroll-fix-row{
+    visibility: hidden;
+    height: 20px;
+}
+li.dropdown-header{
+    padding-left: 10px;
+}
