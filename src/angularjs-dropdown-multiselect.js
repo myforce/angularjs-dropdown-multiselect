@@ -32,7 +32,8 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 
                 var template = '<div class="multiselect-parent btn-group dropdown-multiselect">';
                 template += '<button ng-disabled="disabled" type="button" class="dropdown-toggle" ng-class="settings.buttonClasses" ng-click="toggleDropdown()">{{getButtonText()}}&nbsp;<span class="caret"></span></button>';
-                template += '<ul scrollbar class="dropdown-menu dropdown-menu-form" ng-if="open" ng-style="{display: open ? \'block\' : \'none\', height : settings.scrollable ? settings.scrollableHeight : \'auto\', overflow: \'hidden\', padding: \'10px\' }" >';
+                template += '<div class="dropdown-menu" scrollbar ng-if="open" ng-style="{display: open ? \'block\' : \'none\', height: \'auto\', maxHeight: settings.scrollableHeight, overflow: \'hidden\', padding: \'0px\' }" >';
+                template += '<ul class="dropdown-list" ng-style="{ padding: \'10px\', margin: \'0px\' }" >';
                 template += '<li ng-if="settings.showCheckAll && settings.selectionLimit !== 1"><a ng-keydown="keyDownLink($event)" data-ng-click="selectAll()" tabindex="-1" id="selectAll"><span class="glyphicon glyphicon-ok"></span>  {{texts.checkAll}}</a>';
                 template += '<li ng-if="settings.showUncheckAll"><a ng-keydown="keyDownLink($event)" data-ng-click="deselectAll();" tabindex="-1" id="deselectAll"><span class="glyphicon glyphicon-remove"></span>   {{texts.uncheckAll}}</a></li>';
                 template += '<li ng-if="currentGroups && ((settings.showCheckAll && settings.selectionLimit > 0) || settings.showUncheckAll)" class="divider"></li>';
@@ -62,8 +63,8 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 
                 template += '<li class="divider" ng-show="settings.selectionLimit > 1"></li>';
                 template += '<li role="presentation" ng-show="settings.selectionLimit > 1"><a role="menuitem">{{selectedModel.length}} {{texts.selectionOf}} {{settings.selectionLimit}} {{texts.selectionCount}}</a></li>';
-                template += '<li ng-if="settings.scrollable" class="scroll-fix-row">SCROLL FIX</li>';
                 template += '</ul>';
+                template += '</div>';
                 template += '</div>';
 
                 element.html(template);
@@ -105,7 +106,6 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 
                 $scope.settings = {
                     dynamicTitle: true,
-                    scrollable: false,
                     scrollableHeight: '300px',
                     closeOnBlur: true,
                     displayProp: 'label',

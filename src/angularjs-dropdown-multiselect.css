@@ -1,8 +1,9 @@
-.single-select .divider{
+.single-select .divider {
     display: none;
 }
-.dropdown-menu > .scroll-content > li > a{
-	display: block;
+
+.dropdown-list > li > a {
+    display: block;
     padding: 3px 10px;
     clear: both;
     font-weight: normal;
@@ -10,18 +11,17 @@
     color: #333333;
     white-space: nowrap;
 }
-.dropdown-menu > .scroll-content > li > a > .glyphicon{
-    padding-right: 5px;
-}
-.dropdown-menu > .scroll-content > li > a:hover, .dropdown-menu > li > a:focus {
-    text-decoration: none;
-    color: #fff;
-    background-color: #1C7EBB;
-}
-.scroll-fix-row{
-    visibility: hidden;
-    height: 20px;
-}
-li.dropdown-header{
+
+    .dropdown-list > li > a > .glyphicon {
+        padding-right: 5px;
+    }
+
+    .dropdown-list > li > a:hover, .dropdown-menu > li > a:focus {
+        text-decoration: none;
+        color: #fff;
+        background-color: #1C7EBB;
+    }
+
+li.dropdown-header {
     padding-left: 10px;
 }
