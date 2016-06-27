@@ -16,7 +16,7 @@
         padding-right: 5px;
     }
 
-    .dropdown-list > li > a:hover, .dropdown-menu > li > a:focus {
+    .dropdown-list > li > a:hover, .dropdown-list > li > a:focus {
         text-decoration: none;
         color: #fff;
         background-color: #1C7EBB;
