@@ -341,8 +341,9 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 						if ($scope.settings.closeOnDeselect) $scope.open = false;
 					} else if (!exists) {
 						if ($scope.settings.selectionLimit !== 0 && $scope.settings.deselectToLimit) {
-							while ($scope.selectedModel.length >= $scope.settings.selectionLimit)
-								$scope.selectedModel.shift();
+							while ($scope.selectedModel.length >= $scope.settings.selectionLimit) {
+								$scope.externalEvents.onItemDeselect($scope.selectedModel.shift());
+							}
 						}
 						if ($scope.settings.selectionLimit === 0 || $scope.selectedModel.length < $scope.settings.selectionLimit) {
 							$scope.selectedModel.push(finalObj);
