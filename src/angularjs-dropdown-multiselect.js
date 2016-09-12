@@ -125,7 +125,8 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 				styleActive: false,
 				keyboardControls: false,
 				template: '{{getPropertyForObject(option, settings.displayProp)}}',
-				searchField: '$'
+				searchField: '$',
+				appendToBody: false
 			};
 
 			$scope.texts = {
@@ -496,6 +497,17 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 					}
 				}
 			};
+			
+			if ($scope.settings.appendToBody) {
+                debugger;
+                var offset = $element.offset();
+                $element.css({
+                    position: 'absolute',
+                    top: offset.top + 'px',
+                    left: offset.left + 'px'
+                });
+                $element.appendTo('body');
+            }
 		}
 	};
 }]);
