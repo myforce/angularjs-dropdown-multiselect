@@ -125,7 +125,8 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 				styleActive: false,
 				keyboardControls: false,
 				template: '{{getPropertyForObject(option, settings.displayProp)}}',
-				searchField: '$'
+				searchField: '$',
+				deselectToLimit: false
 			};
 
 			$scope.texts = {
@@ -338,12 +339,19 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 						$scope.selectedModel.splice(findIndex($scope.selectedModel, findObj), 1);
 						$scope.externalEvents.onItemDeselect(findObj);
 						if ($scope.settings.closeOnDeselect) $scope.open = false;
-					} else if (!exists && ($scope.settings.selectionLimit === 0 || $scope.selectedModel.length < $scope.settings.selectionLimit)) {
-						$scope.selectedModel.push(finalObj);
-						$scope.externalEvents.onItemSelect(finalObj);
-						if ($scope.settings.closeOnSelect) $scope.open = false;
-						if ($scope.settings.selectionLimit > 0 && $scope.selectedModel.length === $scope.settings.selectionLimit) {
-							$scope.externalEvents.onMaxSelectionReached();
+					} else if (!exists) {
+						if ($scope.settings.selectionLimit !== 0 && $scope.settings.deselectToLimit) {
+							while ($scope.selectedModel.length >= $scope.settings.selectionLimit) {
+								$scope.externalEvents.onItemDeselect($scope.selectedModel.shift());
+							}
+						}
+						if ($scope.settings.selectionLimit === 0 || $scope.selectedModel.length < $scope.settings.selectionLimit) {
+							$scope.selectedModel.push(finalObj);
+							$scope.externalEvents.onItemSelect(finalObj);
+							if ($scope.settings.closeOnSelect) $scope.open = false;
+							if ($scope.settings.selectionLimit > 0 && $scope.selectedModel.length === $scope.settings.selectionLimit) {
+								$scope.externalEvents.onMaxSelectionReached();
+							}
 						}
 					}
 				}
