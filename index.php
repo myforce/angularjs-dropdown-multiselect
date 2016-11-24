@@ -12,7 +12,7 @@
 	<div class="container-fluid" data-ng-app="app">
 		<div class="row mb-3">
 			<div class="col-xs-12">
-				<h1 class="mb-3">AngularJS Dropdown Multiselect</h1>
+				<h1>AngularJS Dropdown Multiselect</h1>
 			</div>
 		</div>
 		<div class="row mb-3">
