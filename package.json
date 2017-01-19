@@ -26,7 +26,7 @@
 		"url": "git+https://github.com/myforce/angularjs-dropdown-multiselect.git"
 	},
 	"engines": {
-		"node": "0.10.10"
+		"node": ">=0.10.10"
 	},
 	"main": "src/angularjs-dropdown-multiselect.js",
 	"keywords": [
