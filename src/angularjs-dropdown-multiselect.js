@@ -274,7 +274,6 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 
 						var result = itemsText.join(', ');
 						var index = result.length - 4;
-						var countLimit = 100;
 						while (textWidth(result) > widthLimit) {
 							if (itemsText[itemsText.length - 1] !== "...") {
 								itemsText.push('...');
