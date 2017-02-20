@@ -99,6 +99,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 				onDeselectAll: angular.noop,
 				onInitDone: angular.noop,
 				onMaxSelectionReached: angular.noop,
+				onSearchNotFound: angular.noop,
 				onSelectionChanged: angular.noop
 			};
 
@@ -492,6 +493,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 					} else if ($scope.settings.enableSearch) {
 						$scope.selectAll();
 					}
+					$scope.externalEvents.onSearchNotFound($scope.input.searchFilter, $scope);
 				}
 			};
 
