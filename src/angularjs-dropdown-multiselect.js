@@ -147,6 +147,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 			$scope.input = {
 				searchFilter: $scope.searchFilter || ''
 			};
+			$scope.$watch(function() { return $scope.input.searchFilter; }, function(f) { $scope.searchFilter = f; });
 
 			if (angular.isDefined($scope.settings.groupBy)) {
 				$scope.$watch('options', function(newValue) {
