@@ -425,7 +425,7 @@
                     };
 
                     $scope.keyDownSearchDefault = function (event) {
-                        var parent = event.srcElement.parentNode.parentNode;
+                        var parent = event.srcElement.parentNode;
                         var nextOption;
                         if (!$scope.settings.keyboardControls) {
                             return;
